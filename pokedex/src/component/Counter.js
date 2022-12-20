@@ -6,11 +6,7 @@ export default function Counter() {
   const [ id, setId] = useState(1);
   const [ pokemonDetail, setPokemonDetail] = useState([]);
 
-  useEffect(() => {
-     const pokemon = apiCall('www.api.fr/pokemon/' + id);
-     setPokemonDetail(pokemon) 
 
-  }, [id]);
 
 
 
