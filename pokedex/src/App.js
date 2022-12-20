@@ -1,6 +1,7 @@
 import Welcome from "./component/Welcome/Welcome";
 import Header from "./component/Header";
-
+import Clock from "./component/Clock";
+import Counter from "./component/Counter";
 export default function App() {
 
   const roles = ["admin", "modérateur", "maître Pokémon"];
@@ -10,12 +11,15 @@ export default function App() {
       console.log( "Hello World" );
   }
 
-
+/**
+  <Header /> 
+  <Clock />
+  <Welcome onClick={myFunction} prenom="Mathilde" nom="Marchand" isAdmin={true} age ={12} roles= {roles} />
+*/
   return (
     
       <>
-        <Header /> 
-        <Welcome onClick={myFunction} prenom="Mathilde" nom="Marchand" isAdmin={true} age ={12} roles= {roles} />
+        <Counter />
       </>
   );
 }

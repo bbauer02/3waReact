@@ -19,7 +19,7 @@ export default function Welcome ({nom, prenom, age, isAdmin, roles, onClick}) {
     console.log(e.target.textContent)
   }
 
-  const [activeId, setActiveId] = useState(-1) ;
+  const [activeId, setActiveId] = useState(-1);
 
   return (
     <div>
@@ -43,7 +43,7 @@ export default function Welcome ({nom, prenom, age, isAdmin, roles, onClick}) {
       {
         roles.map((role,id) => 
         (
-          <li onClick={setActiveId(id)} key={id}  className={activeId === id ? "yellow" : ""}>
+          <li onClick={() => setActiveId(id)} key={id}  className={activeId === id ? "yellow" : ""}>
             {role}   
           </li>
         ))
