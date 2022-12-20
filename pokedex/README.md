@@ -6,9 +6,11 @@
 
 
 * Afficher la liste des Pokémons dans la page d'accueil. 
-  => Nom + Numéro + Photo. 
+  => Nom + Numéro + + type ++Photo. 
   Utiliser la librairie Materialise : 
-  https://materializecss.com/ 
+  https://materializecss.com/
+
+* Pour le type : Utiliser une classe CSS 'Badge' et déterminer une couleur différente pour chaque type.  
 
 * Quand on passe le curseur de la sourie sur une carte ( class CSS Card ), le bord de celle-ci doit changer de couleur. 
 
