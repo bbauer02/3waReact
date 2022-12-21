@@ -1,14 +1,26 @@
 import { useState, useEffect } from "react";
-import POKEMONS from "../datas/mock-pokemon";
 import PokemonCard from "./pokemonCard";
+import PokemonServices  from "../services/pokemon-services";
 import "./pokemonCard.css";
-
+import Loader from "./loader";
 
 export default function PokemonList() {
-    const [pokemons, setPokemons] = useState(POKEMONS);
-
+    const [pokemons, setPokemons] = useState(null);
     useEffect(() => {
-        setPokemons(POKEMONS);
+/*
+        async function getPokemons() {
+            const pokemons = await PokemonServices.getAll();
+            setPokemons(pokemons);
+        }
+        getPokemons();
+
+        OU .....
+
+*/
+        (async () => {
+            const pokemons = await PokemonServices.getAll();
+            setPokemons(pokemons);
+        })();
     }, []);
 
     return (
@@ -16,9 +28,11 @@ export default function PokemonList() {
             <h1 className="center" >Pokédex</h1>
             <div className="container"> 
                 <div className="row" > 
-                    {pokemons.map(pokemon => (
-                        <PokemonCard key={pokemon.id} pokemon={pokemon} />
-                    ))} 
+                    {pokemons? 
+                        (pokemons.map(pokemon => (
+                            <PokemonCard key={pokemon.id} pokemon={pokemon} />
+                        )))
+                    : <h4 className="center"><Loader /></h4>  } 
                 </div>
             </div>
         </div> 
