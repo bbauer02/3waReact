@@ -1,28 +1,12 @@
-import PokemonList from "./pages/pokemon-list";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <PokemonList />,
-    children: [
-      {
-        path:"pokemon/:id",
-        element: <PokemonDetail />
-      }
-    ]
-  },
-]);
+import Router from './routes'
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
   return (
-   <>
-     <RouterProvider router={router} />
-   </>
+    <BrowserRouter> 
+        <Router />
+    </BrowserRouter> 
   );
 }
 

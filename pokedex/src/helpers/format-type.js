@@ -1,4 +1,4 @@
-export const formatType = (type) => {
+const formatType = (type) => {
     let color;
    
     switch (type) {
@@ -42,3 +42,5 @@ export const formatType = (type) => {
    
     return `chip ${color}`;
   }
+
+  export default formatType

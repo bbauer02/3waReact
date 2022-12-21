@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PokemonCard from "../components/pokemonCard";
 import PokemonServices  from "../services/pokemon-services";
-import "./pokemonCard.css";
+import "../components/pokemonCard.css";
 import Loader from "../components/loader";
 
 export default function PokemonList() {
