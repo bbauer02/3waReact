@@ -2,3 +2,96 @@
     border: solid 4px #f5f5f5;
     height: 200px;
   }
+
+  .title {
+    color: #3466AF!important;
+  }
+  .normal {
+    background-color: #A8A878;
+    border: 1px solid #6D6D4E;
+  }
+  
+  .feu {
+    background-color: #F08030;
+    border: 1px solid #9C531F;
+  }
+  
+  .eau {
+    background-color: #6890F0;
+    border: 1px solid #445E9C;
+  }
+  
+  .electrik {
+    background-color: #F8D030;
+    border: 1px solid #A1871F;
+  }
+  
+  .plante {
+    background-color: #78C850;
+    border: 1px solid #4E8234;
+  }
+  
+  .glace {
+    background-color: #98D8D8;
+    border: 1px solid #638D8D;
+  }
+  
+  .terre {
+    background-color: #E0C068;
+    border: 1px solid #927D44;
+  }
+  
+  .vol {
+    background-color: #A890F0;
+    border: 1px solid #6D5E9C;
+  }
+  
+  .spectre {
+    background-color: #705898;
+    border: 1px solid #493963;
+  }
+  
+  .roche {
+    background-color: #B8A038;
+    border: 1px solid #786824;
+  }
+  
+  .combat {
+    background-color: #C03028;
+    border: 1px solid #7D1F1A;
+  }
+  
+  .poison {
+    background-color: #A040A0;
+    border: 1px solid #682A68;
+  }
+  
+  .psy {
+    background-color: #F85888;
+    border: 1px solid #A13959;
+  }
+  
+  .insecte {
+    background-color: #A8B820;
+    border: 1px solid #6D7815;
+  }
+  
+  .sombre {
+    background-color: #705848;
+    border: 1px solid #49392F;
+  }
+  
+  .acier {
+    background-color: #B8B8D0;
+    border: 1px solid #787887;
+  }
+  
+  .dragon {
+    background-color: #7038F8;
+    border: 1px solid #4924A1;
+  }
+
+  .fee {
+    background-color: #EE99AC;
+    border: 1px solid #A13959;
+  }

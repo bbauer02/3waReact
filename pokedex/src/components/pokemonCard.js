@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { formatType,formatDate } from "../helpers";
 import { useNavigate } from "react-router-dom";
+import './pokemonCard.css';
+
 
 PokemonCard.propTypes = {
     pokemon: PropTypes.shape({
@@ -11,7 +13,7 @@ PokemonCard.propTypes = {
         cp: PropTypes.number.isRequired,
         picture: PropTypes.string.isRequired,
         types: PropTypes.arrayOf(PropTypes.string).isRequired,
-        created: PropTypes.instanceOf(Date).isRequired,
+        created: PropTypes.string,
     }).isRequired,
 }
 
@@ -19,11 +21,11 @@ export default function PokemonCard({pokemon}) {
     const [color, setColor] = useState('#f5f5f5');
     const navigate = useNavigate();
 
-    const showBorder = (pokemonId) => {
-        setColor('#fe1b00');
+    const showBorder = () => {
+        setColor('#FFCB05');
     };
      
-    const hideBorder = (pokemonId) => {
+    const hideBorder = () => {
         setColor('#f5f5f5');
     };
 
@@ -32,31 +34,39 @@ export default function PokemonCard({pokemon}) {
       }
       
     return (
-        <div 
-        className="col s12 m6 l4" 
-        key={pokemon.id} 
-        onMouseEnter={() => showBorder()} 
-        onMouseLeave={() => hideBorder()}
-        onClick={() => goToPokemon(pokemon.id)}
-        >
+        <div className="col">
             <div 
-                className="card horizontal" 
-                style={{ borderColor: color }} 
+                className="card" 
+                style={{
+                    border: `5px solid ${color}`
+                }} 
+                onMouseEnter={showBorder}
+                onMouseLeave={hideBorder}
+                onClick={() => goToPokemon(pokemon.id)}
             >
-                <div className="card-image">
-                    <img src={pokemon.picture} alt={pokemon.name} />
-                </div>  
-                <div className="card-content">
-                    <p>#{pokemon.id} {pokemon.name}</p>
-                    <p><small>{formatDate(pokemon.created)}</small></p>
-                    {pokemon.types.map(type => (
-                        <span key={type} className={formatType(type)}>{type}</span>
-                    ))}
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <img src={pokemon.picture} alt={pokemon.name} width="100%"/>
+                    </div>
+                    <div className="col-md-8">
+                    <div className="card-body">
+                        <h5 className="card-title">{pokemon.name}</h5>
+    
+                        <p className="card-text">                   
+                            {pokemon.types.map(type => (
+                                <span 
+                                    key={type} 
+                                    className={`badge rounded-pillbadge rounded-pill ${formatType(type)}`}
+                                >
+                                    {type}
+                                </span>
+                            ))}
+                        </p>
+                        <p className="card-text"><small className="text-muted">Ajouté dans le Pokedex le : {pokemon.created}</small></p>
+                    </div>
+                    </div>
                 </div>
-               
-
             </div>
         </div>
-
     );
 }

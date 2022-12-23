@@ -1,17 +1,29 @@
-import POKEMONS from "../datas/mock-pokemon";
-
+import axios from "axios";
 export default class PokemonServices {
+
+
+    static async add(pokemon) {
+        const res = await axios.post(`/pokemons`,pokemon);
+        return res.data
+    }
+
+    static async edit(id, pokemon) {
+        const res = await axios.put(`/pokemons/${id}`,pokemon);
+        return res.data
+    }
+
+    static async delete(id) {
+        const res =  await axios.delete(`/pokemons/${id}`);
+        return res;
+    }
+
     /**
      * Get all pokemons
      * @returns {Array} all pokemons
      */
-    static getAll() {
-        return new Promise((resolve, reject) => {
-            if(!POKEMONS) reject("No pokemons found")
-            setTimeout(() => {
-                resolve(POKEMONS);
-            },2000);
-        });
+    static async getAll() {
+        const res = await axios.get('/pokemons');
+        return res.data;
     }
     /**
      * Get a pokemon by id
@@ -19,13 +31,13 @@ export default class PokemonServices {
      * @param {*} id 
      * @returns {Object} pokemon
      */
-    static getPokemon(id) {
-        return new Promise((resolve, reject) => {
-            const pokemon = POKEMONS.find(pokemon => pokemon.id === id);
-            if(!pokemon) reject("No pokemon found");
-            setTimeout(() => {
-                resolve(pokemon);
-            },2000);
-        });
+    static async getPokemon(id) {
+        try {
+            const res = await axios.get(`/pokemons/${id}`);
+            return res.data;
+        }
+        catch {
+            return null
+        }
     }
 }

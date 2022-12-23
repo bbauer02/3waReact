@@ -1,10 +1,10 @@
 import PokemonList from "../pages/pokemon-list";
 import PokemonDetail from "../pages/pokemon-detail";
-import PokemonForm from "../components/pokemonForm";
 
 import {
     useRoutes
   } from "react-router-dom";
+import PokemonEdit from "../pages/pokemon-edit";
 
   export default function Router() {
     return useRoutes([
@@ -18,7 +18,7 @@ import {
               },
               { 
                 path: ":id/edit", 
-                element: <PokemonForm />
+                element: <PokemonEdit />
               }
             ],
       },

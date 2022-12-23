@@ -3,40 +3,40 @@ const formatType = (type) => {
    
     switch (type) {
       case 'Feu': 
-        color = 'red lighten-1'; 
+        color = 'feu'; 
         break; 
       case 'Eau': 
-        color = 'blue lighten-1'; 
+        color = 'eau'; 
         break; 
       case 'Plante': 
-        color = 'green lighten-1'; 
+        color = 'plante'; 
         break; 
       case 'Insecte': 
-        color = 'brown lighten-1'; 
+        color = 'insecte'; 
         break; 
       case 'Normal': 
-        color = 'grey lighten-3'; 
+        color = 'normal'; 
         break; 
       case 'Vol': 
-        color = 'blue lighten-3'; 
+        color = 'vol'; 
         break; 
       case 'Poison': 
-        color = 'deep-purple accent-1'; 
+        color = 'poison'; 
         break; 
       case 'Fée': 
-        color = 'pink lighten-4'; 
+        color = 'fee'; 
         break; 
       case 'Psy': 
-        color = 'deep-purple darken-2'; 
+        color = 'psy'; 
         break; 
       case 'Electrik': 
-        color = 'lime accent-1'; 
+        color = 'electrik'; 
         break; 
       case 'Combat': 
-        color = 'deep-orange'; 
+        color = 'combat'; 
         break; 
       default: 
-        color = 'grey'; 
+        color = 'text-bg-secondary'; 
         break; 
     }
    

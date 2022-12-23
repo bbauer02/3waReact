@@ -25,15 +25,13 @@ export default function PokemonList() {
 
     return (
         <div>
-            <h1 className="center" >Pokédex</h1>
-            <div className="container"> 
-                <div className="row" > 
+            <h1 className="text-center title" >Pokédex</h1>
+            <div className="row row-cols-1 row-cols-md-3 g-4">
                     {pokemons? 
                         (pokemons.map(pokemon => (
                             <PokemonCard key={pokemon.id} pokemon={pokemon} />
                         )))
-                    : <h4 className="center"><Loader /></h4>  } 
-                </div>
+                    : <h4 className="text-center"><Loader /></h4>  } 
             </div>
         </div> 
     );
